@@ -1,11 +1,11 @@
-# @rubys/live_elements_controller
+# @rubys/stimulus-live-elements
 
 ## Usage
 
 Run the following commang to get started:
 
 ```sh
-bin/importmap pin @rubys/live_elements_controller
+bin/importmap pin @rubys/stimulus-live-elements
 ```
 
 Add `data-controller="live-elements"` to your containing HTML element.
@@ -20,7 +20,7 @@ Rails actions by adding `data-action` attributes.  For example,
 to cause a button clike to invoke a demo#click controller action
 on the server, do something like the following:
 
-```
+```erb
 <%= form.button "blue", name: 'color',
   data: {action: {click: demo_click_path}}
 %>
@@ -28,7 +28,7 @@ on the server, do something like the following:
 
 In your server, produce a [turbostream](https://turbo.hotwired.dev/handbook/streams) response.  An example of a response that replaces a header:
 
-```
+```ruby
 respond_to do |format|
   format.turbo_stream {
     render turbo_stream: turbo_stream.replace('header',
