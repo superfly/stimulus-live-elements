@@ -1,11 +1,18 @@
 # @rubys/stimulus-live-elements
 
+**Status: ALPHA**
+
+API may change dramatically before release.  For now, pin a specific version.
+
 ## Usage
 
-Run the following commang to get started:
+See [gist](https://gist.github.com/rubys/2f94bffcd369f1c014fef35fd355beba) or
+run the following commang to get started:
 
 ```sh
-bin/importmap pin @rubys/stimulus-live-elements
+bin/importmap pin @rubys/stimulus-live-elements@0.0.3
+echo 'export { default } from  "@rubys/stimulus-live-elements"' > \
+  app/javascript/controllers/live_elements_controller.js
 ```
 
 Add `data-controller="live-elements"` to your containing HTML element.
