@@ -1,4 +1,4 @@
-# @rubys/stimulus-live-elements
+# @flydotio/stimulus-live-elements
 
 **Status: ALPHA**
 
@@ -10,8 +10,8 @@ See [gist](https://gist.github.com/rubys/2f94bffcd369f1c014fef35fd355beba) or
 run the following commang to get started:
 
 ```sh
-bin/importmap pin @rubys/stimulus-live-elements@0.0.5
-echo 'export { default } from  "@rubys/stimulus-live-elements"' > \
+bin/importmap pin @flydotio/stimulus-live-elements@0.1.0
+echo 'export { default } from  "@flydotio/stimulus-live-elements"' > \
   app/javascript/controllers/live_elements_controller.js
 ```
 
