@@ -17,7 +17,9 @@ export default class extends Controller {
     this.observer = new MutationObserver(mutationsList => {
       mutationsList.forEach(mutation => {
         mutation.addedNodes.forEach(addedNode => {
-          this.monitor(addedNode);
+          if (addedNode.nodeType == Node.ELEMENT_NODE) {
+            this.monitor(addedNode);
+          }
         });
       });
     });
@@ -79,15 +81,24 @@ export default class extends Controller {
       method: method,
       headers: {
         'X-CSRF-Token': this.token,
+        'Accept': 'text/vnd.turbo-stream.html',
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       credentials: 'same-origin',
       body: body
     }).then(response => response.text())
       .then(html => Turbo.renderStreamMessage(html))
-      .finally(() => setTimeout(resolve, 100));
+      .finally(() => window.requestIdleCallback
+         ? window.requestIdleCallback(resolve, { timeout: 100 })
+         : setTimeout(resolve, 50));
+      //
+      // https://caniuse.com/requestidlecallback
+      //
       // "Since Turbo Streams are customElements, 
       // there's no way to know when they're finished executing"
       // -- https://github.com/rails/request.js/issues/35
+  } catch (error) {
+    console.error(error);
+    resolve();
   }
 }
