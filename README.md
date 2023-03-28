@@ -1,5 +1,7 @@
 # @flydotio/stimulus-live-elements
 
+See [announcement](https://fly.io/ruby-dispatch/introducing-live-elements/) and [demo](https://github.com/fly-apps/live-elements-demo/blob/main/README.md#readme) for more information.
+
 **Status: ALPHA**
 
 API may change dramatically before release.  For now, pin a specific version.
