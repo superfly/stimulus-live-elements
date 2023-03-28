@@ -1,6 +1,6 @@
 {
   "name": "@flydotio/stimulus-live-elements",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Live Element support for Rails via Stimulus",
   "author": "Sam Ruby <rubys@intertwingly.net>",
   "license": "MIT",
